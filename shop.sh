@@ -11,7 +11,7 @@ function clean_cart() {
 	cat /dev/null > cart
 }
 
-
+# select a product
 function select_product() {
 	echo "These are the toppings available: "
 	echo "-------------------------"
@@ -42,8 +42,7 @@ function show_cart() {
 		else	
 			cart_map[$line,0]=$line;
 			cart_map[$line,1]=1;
-		fi	
-			
+		fi
 		
 	sequence=0
 	productString=''
@@ -73,6 +72,7 @@ function show_cart() {
 	
 }
 
+# deletes product from the cart by ID
 function delete_product_from_cart() {
 	echo "These are the toppings available: "
 	echo "-------------------------"
@@ -106,12 +106,10 @@ function delete_product_from_cart() {
 
 array=(2 5 7 2 8 7)
 
-
-
 toppings=(Pepperoni Ham Tomatoes Onions Jalapeno Cheese Res_Pepper Black_Olives)
 prices=(0.50 0.35 0.40 0.35 0.55 0.60 0.75 0.80)
 
-
+cartMode=false
 select_product
 while :
 do
